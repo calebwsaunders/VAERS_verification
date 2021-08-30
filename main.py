@@ -44,7 +44,7 @@ def choose_excel_file():
         return 'None'
 
 def choose_file(message):
-    """Asking the user to clarify which excel correlates to VAX ID and which to VAX Reports data."""
+    """Asking the user to clarify which csv file correlates to VAX ID and which to VAX Reports data."""
     files = glob.glob('*.csv')
     print(message)
     output = pyip.inputMenu(files, numbered=True)
@@ -206,7 +206,7 @@ for vaccine in sorted_vax_data_list:
     output_wb_sheet[f'E{row_to_write_to}'] = vaccine[4]
     row_to_write_to += 1
 
-
+# Writing out the totals and comparing COVID19 to everything else.
 output_wb_sheet['G2'] = "Total Deaths"
 output_wb_sheet['G3'] = total_deaths
 output_wb_sheet['G5'] = "COVID19 Vaccine Deaths"
